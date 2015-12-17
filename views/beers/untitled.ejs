@@ -1,0 +1,56 @@
+console.log(getTracks[0].tracks);
+
+	loop to get the tracks and corresponding foreign_id for playlist
+				
+	console.log(getArtists[0].title);
+	console.log(getArtists[0].artist_name);
+	console.log(getArtists[0].tracks[0].foreign_id);
+				
+	getArtists.forEach(function(track){
+		console.log(track.title);
+		console.log(track.artist_name);
+		console.log()
+	});
+
+
+
+
+	<% artists.forEach(function(grabInfo) { %>
+	
+	<li>test: <%= grabInfo.title %></li>
+
+	<% 
+	var tracks = artists.tracks;
+	artists.forEach(function(grabInfo) { %>
+	
+	<li>test: <%= grabInfo.tracks.foreign_id %></li>
+
+<% }); %>
+
+<% var tracks = grab.tracks[0].foreign_id %>
+	<% console.log(tracks); %>
+	<li><%= grab.tracks[0].foreign_id %></li>
+
+
+	<% var shorten = track.replace('spotify:track', '');%>
+	<% console.log(track)  %>
+
+<!-- 
+<h1>testing stuff</h1>
+<% artists.forEach(function(grab){ %>
+	<li><%= grab.title %></li>
+	<li><%= grab.artist_name %></li>
+	<% var tracks = grab.tracks[0].foreign_id %>
+	<% console.log(tracks); %>
+	<li><%= grab.tracks[0].foreign_id %></li>
+<iframe src="https://embed.spotify.com/?uri=tracks[0]" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+<% }); %> -->
+
+	<iframe src="https://embed.spotify.com/?uri=spotify:trackset:PREFEREDTITLE:<%=shorten%>" frameborder="0" allowtransparency="true"></iframe>
+
+	<iframe src="https://embed.spotify.com/?uri=<%=track%>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+
+	<li><%= grab.title %></li>
+	<li><%= grab.artist_name %></li>
+

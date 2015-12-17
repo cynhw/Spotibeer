@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Beer Test</title>
+
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<!-- id="myAffix" data-spy="affix" data-offset-top="50" -->
+
+	<nav class="navbar" >
+		<div class="container fluid">
+
+<!-- toggle optimized mobile navbar -->
+		
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-ex-2-collapse" aria-expanded="false">
+				<span class="sr-only">Toogle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+					
+			<a class="navbar-brand" href="/">spotiBeer</a>
+		</div>
+
+<!-- below will be the code for collecting nav links, forms for toggling -->
+
+<div class="collapse navbar-collapse navbar-right" id="navbar-ex-2-collapse">
+	<ul class="nav navbar-nav">
+		<li class="active">
+		<a href="#">Home <span class="sr-only">(current)</span></a></li>
+		<!-- <li><a href="#">Products</a></li> -->
+	</ul>
+	
+	<form action="/beers/search" method="GET" class="searchBar navbar-form navbar-right" role="search" name="q">
+		<input type="text" class="form-control header-search" placeholder="e.g. Black Butte Porter" name="q">
+		<button type="submit" class="btn header-submit">Search</button>
+		</form>
+	<ul class="nav navbar-nav navbar-right"></ul>
+		</div> <!-- end of navbar-collapse -->
+	</div> 
+</nav> <!-- close container-fluid -->
+
+	<div class="container">
+		<div class="row">
+			
+	<%-body %>	
+	
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

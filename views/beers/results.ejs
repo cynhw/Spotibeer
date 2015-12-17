@@ -1,0 +1,44 @@
+<%
+var imgUrl = 'http://placehold.it/256x256';
+if(results.data.labels && results.data.labels.medium){
+	imgUrl = results.data.labels.medium;
+}
+var description = (results.data.description ? results.data.description : 'N/A');
+%>
+
+<div class="col-md-6 col-md-offset-1">
+<ul align="center">
+<li>Beer: <%= results.data.name %></li>
+	<% var breweries = results.data.breweries;
+		breweries.forEach(function(brewery){ %>
+	 	<li>Brewed by: <%=brewery.name%></li>
+	<% }); %>
+<li>Description: <%= results.data.description %></li>
+<li>ABV: <%= results.data.abv %></li>
+<li>Style: <%= results.data.style.name %></li>
+<li><img src="<%= imgUrl %>"></li>
+<li>Category Description: <%= results.data.style.description %></li>
+</div>
+
+<div class="col-md-4 pull-right">
+<h3>Playlist:</h3>
+<% var tracks = ""; %>
+<% artists.forEach(function(grab){ %>
+	<li id="hidden-artist-name"><%= grab.artist_name %></li>
+	<!-- <% var track = grab.tracks[0].foreign_id; %> -->
+	<% var track = grab.tracks[0].foreign_id.replace('spotify:track:', ''); %>
+	<% tracks =  tracks + track + ',';%>
+<% }); %> 
+
+<iframe src="https://embed.spotify.com/?uri=spotify:trackset:PREFEREDTITLE:<%=tracks%>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+</div>
+
+
+
+<div id="results"></div>
+
+
+</ul>
+
+	
+
