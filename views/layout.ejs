@@ -35,24 +35,36 @@
 <!-- below will be the code for collecting nav links, forms for toggling -->
 
 <div class="collapse navbar-collapse navbar-right" id="navbar-ex-2-collapse">
-	<ul class="nav navbar-nav">
-		<li class="active">
-		<a href="#">Home <span class="sr-only">(current)</span></a></li>
+	<ul class="navbar-nav">
+		
+		<!-- <li class="active">
+		<a href="#">Home <span class="sr-only">(current)</span></a></li> -->
 		<!-- <li><a href="#">Products</a></li> -->
-	</ul>
-	
-	<form action="/beers/search" method="GET" class="searchBar navbar-form navbar-right" role="search" name="q">
+	<% if(currentUser) { %>
+			<p class="navbar-text"><a href="/auth/logout" class="logout ">Logout</a></p>
+			<p class="navbar-text">Signed in as <a href="/user"><%= currentUser.name %></a></p>
+	<ul class="nav navbar-nav navbar-right">
+		<form action="/beers/search" method="GET" class="searchBar navbar-form navbar-right" role="search" name="q">
 		<input type="text" class="form-control header-search" placeholder="e.g. Black Butte Porter" name="q">
 		<button type="submit" class="btn header-submit">Search</button>
 		</form>
-	<ul class="nav navbar-nav navbar-right"></ul>
+	</ul>
+		<% } %>
+			
+	</ul>
+
+	
+<!-- 	<ul class="nav navbar-nav navbar-right"> </ul> -->
 		</div> <!-- end of navbar-collapse -->
 	</div> 
 </nav> <!-- close container-fluid -->
 
 	<div class="container">
+		<% include partials/alerts %>
+	</div>
+	<div class="container">
 		<div class="row">
-			
+			<div class="col-md-12">
 	<%-body %>	
 	
 			</div>

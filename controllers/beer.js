@@ -1,5 +1,6 @@
 var express = require('express');
 var request = require('request');
+var db = require('../models');
 var router = express.Router();
 
 // Get Genre From Beer Style Function //
@@ -46,23 +47,14 @@ router.get('/:beerId', function(req, res){
 
 		var echonest = process.env.ECHONEST_API_KEY;
 		var beerGenre = getBeerToGenre(beer.data.style.name);
-		var beerPlaylist = ('http://developer.echonest.com/api/v4/playlist/static?api_key=' + echonest + '&genre=' + beerGenre + '&results=5&type=genre-radio&bucket=id:spotify&bucket=tracks&limit=true');
+		var beerPlaylist = ('http://developer.echonest.com/api/v4/playlist/static?api_key=' + echonest + '&genre=' + beerGenre + '&results=15&type=genre-radio&bucket=id:spotify&bucket=tracks&limit=true');
 			request(beerPlaylist, function(err, response, data){
 				var playlist = JSON.parse(data).response;
+				// look up user, save playlist to playlist table. Use strategies.js as an example of user > provider.
 				var artists = playlist.songs;
 				// console.log(artists);
 				var tracks = artists[0].tracks[0].foreign_id;
 				console.log(tracks);
-
-
-	// 	artists.forEach(function(grab){
-	// 	// console.log(grab.title);
-	// 	// var tracks = artists.tracks;
-	// 	console.log(grab.tracks[0].foreign_id[0]);
-
-	// });
-
-
 
 				res.render('beers/results', {results : beer, artists: artists});
 			});

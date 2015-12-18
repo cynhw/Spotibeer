@@ -54,3 +54,32 @@ console.log(getTracks[0].tracks);
 	<li><%= grab.title %></li>
 	<li><%= grab.artist_name %></li>
 
+
+
+app.get('/test', function(req, res){
+	db.user.find({
+		where : {username : req.user.username}
+	}).then(function(user){
+		user.getProviders({where:{type:'spotify'}}).then(function(providers){
+			var user_id = providers[0].dataValues.pid,
+				token   = providers[0].dataValues.token;
+
+			var options = {
+				url : 'https://api.spotify.com/v1/users/' + user_id + '/playlists',
+				headers : {
+					'Accept'        : 'application/json',
+					'Authorization' : 'Bearer ' + token,
+					'Content-Type'  : 'application/json'
+				}
+				request(options, function(error, response, body){
+					console.log(body);
+				});
+			}
+		});
+	});
+	
+	res.send(req.user);
+});
+
+
+

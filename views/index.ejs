@@ -1,22 +1,38 @@
+<div id="login-btn">
+		<% if(!currentUser) { %>
+		<li><a href="/auth/login/spotify" class="login"><img src="/images/log_in-desktop-medium.png"></a></li>
+		<% } %>
+	</div>
 
 <h1 class="text-center">cheers to music and beer.</h1>
 
-<div class="col-md-8 col-md-offset-2 search center">
+<div class="row">
+	<div class="col-md-8 col-md-offset-2 search center">
 
-	<form action="/beers/search" method="GET" role="search" name="q" class="center">
-		
-		<input type="text" placeholder="e.g. Black Butte Porter" name="q" class="home-bar">
-		<br><br><button type="submit" class="btn btn-default home-submit">Search</button>
+		<form action="/beers/search" method="GET" role="search" name="q" class="center-block" id="main-search">
+			
+			<input type="text" placeholder="e.g. Black Butte Porter" name="q" class="home-bar">
+			<br><br><button type="submit" class="btn btn-default home-submit">Search</button>
 
-	</form>
+		</form>
 
-</div>
+	</div>
 
-<div class="col-md-8 col-md-offset-2 search text-center">
+	<div class="col-md-4 col-md-offset-2 search text-center">
 
-	<h2>Why SpotiBeer?</h2>
-	<p>SpotiBeer creates a playlist consisting music that matches up with the style of the beer.
-	Instead of contemplating what music to groove to next time you're at a party, open up the app
-	and let it do wonders for you.</p>
+		<h2>Why SpotiBeer?</h2>
+		<p>SpotiBeer creates a playlist consisting music that matches up with the style of the beer.
+		Instead of contemplating what music to groove to next time you're at a party, open up the app
+		and let it do wonders for you.</p>
 
+	</div>
+
+	<div class="col-md-4 search text-center">
+
+		<h2>Why SpotiBeer?</h2>
+		<p>SpotiBeer creates a playlist consisting music that matches up with the style of the beer.
+		Instead of contemplating what music to groove to next time you're at a party, open up the app
+		and let it do wonders for you.</p>
+
+	</div>
 </div>
