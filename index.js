@@ -84,8 +84,8 @@ app.get('/user', function(req, res){
 				var user_id = providers[0].dataValues.pid;
 				var token = providers[0].dataValues.token;
 				var options = {
-					method 	: "GET",
-					url : "https://api.spotify.com/v1/me",
+					method 	: 'GET',
+					url : 'https://api.spotify.com/v1/me',
 					headers	: { 
 						'Authorization' : 'Bearer ' + token 
 					}, 
