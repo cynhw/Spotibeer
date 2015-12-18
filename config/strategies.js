@@ -3,7 +3,7 @@ var db              = require('../models');
 
 module.exports = {
 	spotifyStrategy : new SpotifyStrategy({
-			clientID     : process.env.SPOTIFY_KEY,
+			clientID     : process.env.SPOTIFY_CLIENT_ID,
 			clientSecret : process.env.SPOTIFY_SECRET,
 			callbackURL  : process.env.BASE_URL + '/auth/callback/spotify/'
 		},
