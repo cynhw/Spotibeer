@@ -107,5 +107,5 @@ app.use('/auth', require('./controllers/auth'));
 
 // let's connect the the server to not freak out about the errors
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 5000)
 console.log('beer + music = spotiBeer.');
