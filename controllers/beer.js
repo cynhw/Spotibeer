@@ -9,7 +9,7 @@ var getBeerToGenre = function(beer) {
 
 // Good Ol' Americana Beers
 
-	if(beer.indexOf("American-Style" && "IPA") !== -1) {
+	if(beer.indexOf("American-Style" && "India Pale Ale") !== -1) {
 		return "blues-rock";
 	}
 
@@ -28,6 +28,19 @@ var getBeerToGenre = function(beer) {
 	else if(beer.indexOf("Brown Porter") !==-1){
 		return "blues&genre=rock";
 	}
+
+	else if(beer.indexOf("Robust Porter") !==-1){
+		return "blues&genre=rock";
+	}
+
+	else if(beer.indexOf("Oatmeal Stout") !==-1){
+		return "indie+pop&genre=country+pop";
+	}
+
+	else if(beer.indexOf("Imperial IPA") !==-1){
+		return "country+pop"
+	}
+
 
 	// Beers of the Great North America
 
@@ -73,7 +86,7 @@ var getBeerToGenre = function(beer) {
 	}
 
 	else if(beer.indexOf("English-Style" && "Pale" && "Ale") !==-1){
-		return "british+alternative+rock";
+		return "alternative+rock";
 	}
 
 	else if(beer.indexOf("English-Style" && "Dark" && "Ale") !==-1){
