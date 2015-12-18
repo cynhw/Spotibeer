@@ -7,11 +7,11 @@ if(results.data.labels && results.data.labels.medium){
 var description = (results.data.description ? results.data.description : 'N/A');
 %>
 <div class="col-md-3 col-sm-4 pull-left">
-<li class="list-title">Your Beer</li>
+<br><br><li class="list-title">Your Beer</li>
 <br><img class="beer-img" src ="<%= imgUrl %>">
 </div>
 
-<div class="col-md-5 col-sm-4 beer-results">
+<div class="col-md-5 col-sm-4">
 	<br><br><ul><span class="not-describe">
 		<li><span class="list-title">Beer:</span> <%= results.data.name %></li>
 			<% var breweries = results.data.breweries;
@@ -20,8 +20,8 @@ var description = (results.data.description ? results.data.description : 'N/A');
 			<% }); %>
 		<li><span class="list-title">ABV:</span> <%= results.data.abv %></li>
 		<li><span class="list-title">Style:</span> <%= results.data.style.name %></li></span>
-		<br><p><%= results.data.description %></p>
-		
+		<br><p class="beer-results"><%= results.data.description %></p><hr>
+
 		
 		<!-- <li><span class="list-title">Style Description: </span><%= results.data.style.description %></li> -->
 </ul>
@@ -51,7 +51,7 @@ var description = (results.data.description ? results.data.description : 'N/A');
 
 
 <div class="col-md-2 col-sm-4 ">
-<li class="list-title">Your Playlist:</li>
+<br><br><li class="list-title">Your Playlist:</li>
 <br><iframe id="playlist" src="https://embed.spotify.com/?uri=spotify:trackset:<%=artist_name%>:<%=tracks%>" frameborder="0" allowtransparency="true"></iframe>
 </div>
 
