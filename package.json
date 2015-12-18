@@ -29,6 +29,7 @@
     "express-ejs-layouts": "^2.0.0",
     "express-session": "^1.12.1",
     "passport": "^0.3.2",
+    "passport-oauth2": "^1.1.2",
     "passport-spotify": "^0.3.0",
     "pg": "^4.4.3",
     "pg-hstore": "^2.3.2",
