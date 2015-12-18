@@ -1,10 +1,13 @@
 
+<div class="row">
+	<div class="col-md-8 col-md-offset-2 search text-center">
+
 <% if (results.data) { %>
 
-<ul class="well">
+<ul class="well beer-search">
 <% results.data.forEach(function(sup) {  %>
-
-	<li><a href="<%=sup.id %>"><%= sup.name %></a></li>
+	
+	<li class="list-name"><a href="<%=sup.id %>"><%= sup.name %></a></li>
 
 <%  }); %>
 </ul>
@@ -13,9 +16,10 @@
 
 				<div class="error">
 				<img src="/images/error.png" class="error-message" >
-				<p>This movie hasn't been made yet, bummer.</p>
-				<br><br><p onclick="goBack()" class="back-btn"><a href=""><span class="glyphicon glyphicon-chevron-left"></span>Search Again</a></p>
-				<input type="text" name="tag" value=""><input type="submit"></div>
+				<p class="lead">Please enter an actual beer name or brewery.</p>
+				<br><br><p onclick="goBack()" class="back-btn"><a href="/"><span class="glyphicon glyphicon-chevron-left"></span>Search Again</a></p>
 			
 
 				<% } %>
+	</div>
+</div>

@@ -6,7 +6,7 @@ var router   = express.Router();
 router.get('/login/spotify', function(req, res){
 	passport.authenticate(
 		'spotify',
-		{scope : ['playlist-modify-public']}
+		{scope : ['playlist-modify-public', 'user-library-read']}
 	)(req, res);
 });
 

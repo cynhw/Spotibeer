@@ -1,2 +1,12 @@
-<%= users.display_name  %>
-<img src="<%= users.images[0].url  %>">
+<div class="row">
+	<div class="col-md-8 col-md-offset-2 search text-center">
+
+<ul>
+<img id="profile" src="<%= users.images[0].url %>">
+<br><li><h3><%= users.display_name  %></h3></li>
+<li><span class="list-title">Email:</span> <%= users.email  %></li>
+<li><a href="<%= users.uri %>">Open Account in Spotify</a></li>
+</ul>
+
+</div>
+</div>

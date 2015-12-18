@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-
+<% if(currentUser) { %>
 <!-- id="myAffix" data-spy="affix" data-offset-top="50" -->
 
 	<nav class="navbar" >
@@ -29,7 +29,7 @@
 				<span class="icon-bar"></span>
 			</button>
 					
-			<a class="navbar-brand" href="/">spotiBeer</a>
+			<a class="navbar-brand" href="/"><img id="logo" src="/images/beer.png"></a>
 		</div>
 
 <!-- below will be the code for collecting nav links, forms for toggling -->
@@ -40,9 +40,9 @@
 		<!-- <li class="active">
 		<a href="#">Home <span class="sr-only">(current)</span></a></li> -->
 		<!-- <li><a href="#">Products</a></li> -->
-	<% if(currentUser) { %>
-			<p class="navbar-text"><a href="/auth/logout" class="logout ">Logout</a></p>
-			<p class="navbar-text">Signed in as <a href="/user"><%= currentUser.name %></a></p>
+	
+			<li class="navbar-text header-link">Hello, <a href="/user" ><%= currentUser.name %></a></li>
+			<li class="navbar-text header-link"><a href="/auth/logout">Logout</a></li>
 	<ul class="nav navbar-nav navbar-right">
 		<form action="/beers/search" method="GET" class="searchBar navbar-form navbar-right" role="search" name="q">
 		<input type="text" class="form-control header-search" placeholder="e.g. Black Butte Porter" name="q">
@@ -59,9 +59,7 @@
 	</div> 
 </nav> <!-- close container-fluid -->
 
-	<div class="container">
-		<% include partials/alerts %>
-	</div>
+	
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -70,9 +68,10 @@
 			</div>
 		</div>
 	</div>
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="/scripts/script.js"></script>
 </body>
 </html>

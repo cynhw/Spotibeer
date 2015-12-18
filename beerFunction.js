@@ -11,17 +11,17 @@ var getBeerToGenre = function(beer) {
 	}
 
 	else if(beer.indexOf("American-Style" && "Stout") !==-1) {
-		return "rock";
+		return "blues+rock";
 	}
 
 	else if(beer.indexOf("American-Style" && "Imperial Stout") !==-1) {
-		return
+		return "garage+rock";
 	}
 
 // Beers of the Great North America
 
 	else if(beer.indexOf("North-American" && "Lager") !==-1) {
-		return 
+		return "folk+pop";
 	}
 
 	else if(beer.indexOf("North-American" && "Light Lager") !==-1) {
@@ -185,7 +185,7 @@ var getBeerToGenre = function(beer) {
 // The General Stuff - Outcast Beers that don't fit in
 
 	else if(beer.indexOf("Brown Porter") !==-1){
-		return "pop";
+		return "blues+rock&genre=blues";
 	}
 
 	else if(beer.indexOf("Robust Porter") !==-1){
@@ -262,6 +262,10 @@ var getBeerToGenre = function(beer) {
 
 }
 
+
+	else if(beer.indexOf("Brown Porter") !==-1){
+		return "blues&genre=rock";
+	}
 		var name = getBeerToGenre(beer.data.style);
 		var genre = getBeerToGenre
 		var name = getBeerToGenre(beer.data.style);

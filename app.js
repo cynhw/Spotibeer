@@ -92,7 +92,7 @@ app.get('/user', function(req, res){
 				}
 				request(options, function(err, response, body){
 					var user = JSON.parse(body);
-					console.log(user.display_name);
+					console.log(user);
 					res.render('user', {users : user});
 				});
 			});
